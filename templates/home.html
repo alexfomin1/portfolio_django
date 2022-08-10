@@ -1,1 +1,6 @@
-<h1> Это Оля </h1>
+<h1> Это статьи Оли </h1>
+<ul>
+	{% for post in all_posts_list %}
+		<li>{{ post }}</li>
+	{% endfor %}
+</ul>
