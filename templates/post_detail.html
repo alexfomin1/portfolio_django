@@ -1,8 +1,14 @@
 {% extends 'base.html' %}
 
+{% block header %}
+	<header>
+		<h3><a href="{% url 'home' %}">На главную</a></h3>
+	</header>
+{% endblock header %}
+
 {% block content %}
 	<div class='post-entry'>
 		<h2>{{ object.title }}</h2>
-		<p>{{ object.body }}</p>
+		<p>{{ object.text }}</p>
 	</div>
 {% endblock content %}
