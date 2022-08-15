@@ -28,6 +28,9 @@ body {
 
 .card text-center {
 	display: flex;
-	align-items: center;
-	justify-content: center;
+}
+
+a {
+    color: inherit;
+    text-decoration: inherit;
 }
