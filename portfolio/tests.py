@@ -18,7 +18,7 @@ class BlogTests(TestCase):
 
 	def test_post_content(self):
 		self.assertEqual(f'{self.post.title}', 'A good title')
-		self.assertEqual(f'{self.post.text}', 'Nice content')
+		self.assertEqual(f'{self.post.body}', 'Nice content')
 
 	def test_post_list_view(self):
 		resp = self.client.get(reverse('home'))

@@ -1,20 +1,48 @@
 {% extends 'base.html' %}
 
 {% block header %}
-	<header>
-		<h1>Ольга Сандыга</h1>
+	<header style='
+
+	--max-w: 960px;
+    --min-m: 20px;
+    margin-top: 40px;
+    margin-bottom: 50px;
+
+    --c-margin: max(var(--min-m), calc(calc(100% - var(--max-w)) / 2));
+    margin-right: var(--c-margin);
+    margin-left: var(--c-margin);
+	'>
+		<h1><a href="{{ home.html }}" class='nav-link'>Ольга Сандыга</a></h1>
+
+		<ul class="nav justify-content-end" style="margin-bottom: 10px;">
+  			<li class="nav-item">
+    			<a class="nav-link link-secondary"href="mailto:olgazandiga@gmail.com">Email</a>
+  			</li>
+  			<li class="nav-item">
+    			<a class="nav-link link-secondary" href="https://teletype.in/">Teletype</a>
+  			</li>
+  			<li class="nav-item">
+    			<a class="nav-link link-secondary" href="https://web.telegram.org/">Telegram</a>
+  			</li>
+  			<li class="nav-item">
+    			<a class="nav-link link-secondary" href='https://wa.me/79154050395'>Whatsapp</a>
+  			</li>
+		</ul>
+		
+		<p>Sometimes a toothfish is just a toothfish. And sometimes it’s a sea bass. Not really. It’s just a toothfish. A study released in February by conservation group Oceana found that, among other shocking revelations, 59 percent of America’s “tuna” isn’t. You’ve likely seen some of the reaction in the media.</p>
 	</header>
 {% endblock header %}
 
 {% block content %}
-	<p>Это всё про меня</p>
 	<div class="content">
 		{% for post in object_list %}
 			<div class='card text-center'>
 				<div class='card-body'>
 					<h5 class='card-title'><a href="{{ post.resource_url }}" class='nav-link'>{{ post.title }}</a></h5>
 					<p class='card-text text-start lh-1 text-black-50 fw-lighter'>{{ post.body }}</p>
-					<a href="{{ post.resource_url }}" class="btn btn-light btn-md" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .9rem;">{{ post.resource_name }}</a>
+					<a href="{{ post.resource_url }}" class="btn btn-light btn-md" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .9rem;">
+					{{ post.resource_name }}
+					</a>
 				</div>
 			</div>
 		{% endfor %}
